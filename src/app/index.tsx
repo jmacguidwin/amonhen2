@@ -4,7 +4,7 @@ import TopBar from './top-bar'
 import {Layout} from './styles.scss'
 import {useApp, usePosts} from '@/store'
 
-const MAX_RECORDS = 100
+const MAX_RECORDS = 5
 
 const App = () => {
   const theme = useApp(`theme`)

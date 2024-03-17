@@ -19,6 +19,7 @@
 /**
   @tag: div
   @component: Header
+  This controls the styling for the header
 */
 .header {
   align-items: center;
@@ -51,6 +52,7 @@
 /**
   @tag: div
   @component: Actions
+  This controls the little toggles in the top right corner of the page
 */
 .action-panel {
   label + label {
