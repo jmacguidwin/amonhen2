@@ -10,6 +10,12 @@ interface CardProps {
   onClick: (event: React.MouseEvent<HTMLElement>) => void
 }
 
+interface StaticCardBoxProps {
+  hoverEnabled?: boolean
+  post: Post
+  onClick: (event: React.MouseEvent<HTMLElement>) => void
+}
+
 const handleError = ({target}) => {
   const newId = Math.floor(Math.random() * 1000)
   const url = target.src.replace(/\d+/, newId)
@@ -25,6 +31,18 @@ const Card: FC<CardProps> = ({hoverEnabled, post, onClick}) => (
     </Footer>
   </CardBox>
 )
+
+// new stuff start
+const StaticCard: FC<StaticCardBoxProps> = ({hoverEnabled, post, onClick}) => (
+  <CardBox id={post.id} hoverEnabled={hoverEnabled} onClick={onClick}>
+    <Picture src={post.photoUrl} onError={handleError}/>
+    <Footer>
+      <div>150</div>
+    </Footer>
+  </CardBox>
+)
+
+// new stuff end
 
 export default React.memo(Card,
   (prev, next) => (
